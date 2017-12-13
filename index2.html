@@ -1,0 +1,71 @@
+<head>
+    <title>Bootstrap Table Examples</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/index.css">
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/index.js"></script>
+    <script src="ga.js"></script>
+</head>
+<div>
+    <table id="table" data-search="true" data-show-columns="true" data-pagination="true" data-height="250">
+        <thead>
+            <tr>
+                <th data-field="stargazers_count" data-sortable="true">Stars</th>
+                <th data-field="name" data-sortable="true" width="200">Name</th>
+                <th data-field="forks_count" data-sortable="true">Forks</th>
+                <th data-field="description" data-sortable="true">Description</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<script>
+var data = [{
+    "name": "An extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap table",
+        "stargazers_count": "An extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap table",
+        "forks_count": "An extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap table",
+        "description": "An extended Bootstrap table An extended Bootstrap table An extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap tableAn extended Bootstrap table"
+}, {
+    "name": "multiple-select",
+        "stargazers_count": "288",
+        "forks_count": "20",
+        "description": "A jQuery plugin to select multiple elements with checkboxes :)"
+}, {
+    "name": "bootstrap-table",
+        "stargazers_count": "32",
+        "forks_count": "11",
+        "description": "Show/hide password plugin for twitter bootstrap."
+}, {
+    "name": "bootstrap-table",
+        "stargazers_count": "1",
+        "forks_count": "4",
+        "description": "my blog"
+}, {
+    "name": "scutech-redmine 1",
+        "stargazers_count": "50",
+        "forks_count": "3",
+        "description": "Redmine notification tools for chrome extension."
+}];
+
+$(function () {
+    $('#table').bootstrapTable({
+    		height: getHeight(),
+        data: data
+    });
+ // sometimes footer render error.
+        setTimeout(function () {
+            $table.bootstrapTable('resetView', {height: 1000});			
+        }, 200);
+			
+        $(window).resize(function () {
+            $table.bootstrapTable('resetView', {
+                height: getHeight()
+            });
+        });
+
+});
+
+function getHeight() {
+        return jQuery(window).height() - jQuery('h1').outerHeight(true);
+    }
+</script>
